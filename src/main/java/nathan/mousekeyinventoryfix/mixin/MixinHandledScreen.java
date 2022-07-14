@@ -24,7 +24,7 @@ public abstract class MixinHandledScreen {
 
     /**
      * @author Elephant_1214
-     * @reason Fixes the mouse key bind item drop issue
+     * @reason Fixes the issue with closing an inventory and dropping items when the keys are bound to mouse buttons
      */
     @Inject(method = "onMouseClick(I)V", at = @At(value = "FIELD", target = "Lnet/minecraft/client/option/GameOptions;swapHandsKey:Lnet/minecraft/client/option/KeyBinding;", opcode = Opcodes.GETFIELD))
     public void onMouseClickMixin(int button, CallbackInfo ci) {
