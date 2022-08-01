@@ -1,9 +1,8 @@
 plugins {
-	id 'fabric-loom' version '0.12-SNAPSHOT'
-	id 'maven-publish'
+	id "fabric-loom" version "0.12-SNAPSHOT"
 }
 
-sourceCompatibility = targetCompatibility = JavaVersion.VERSION_17
+sourceCompatibility = targetCompatibility = JavaVersion.VERSION_1_8
 
 archivesBaseName = project.archives_base_name
 version = project.mod_version
@@ -34,7 +33,7 @@ processResources {
 }
 
 tasks.withType(JavaCompile).configureEach {
-	it.options.release = 17
+	it.options.release = 8
 }
 
 java {
@@ -46,20 +45,3 @@ jar {
 		rename { "${it}_${project.archivesBaseName}"}
 	}
 }
-
-// configure the maven publication
-//publishing {
-//	publications {
-//		mavenJava(MavenPublication) {
-//			from components.java
-//		}
-//	}
-//
-//	// See https://docs.gradle.org/current/userguide/publishing_maven.html for information on how to set up publishing.
-//	repositories {
-//		// Add repositories to publish to here.
-//		// Notice: This block does NOT have the same function as the block in the top level.
-//		// The repositories here will be used for publishing your artifact, not for
-//		// retrieving dependencies.
-//	}
-//}
