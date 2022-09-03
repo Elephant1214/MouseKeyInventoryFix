@@ -4,7 +4,7 @@
     "version": "1.1.0",
 
     "name": "Mouse Key Inventory Fix",
-    "description": "Fixes the issues with mouse keys in inventories",
+    "description": "Fixes the almost ten-year-old issue with not being able to use mouse key binds in inventories.",
     "authors": [
         "Elephant_1214"
     ],
