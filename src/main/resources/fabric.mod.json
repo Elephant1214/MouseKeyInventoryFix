@@ -1,35 +1,34 @@
 {
-  "schemaVersion": 1,
-  "id": "mousekeyinventoryfix",
-  "version": "1.0.1",
+    "schemaVersion": 1,
+    "id": "mousekeyinventoryfix",
+    "version": "1.1.0",
 
-  "name": "Mouse Key Inventory Fix",
-  "description": "Fixes the issues with mouse keys in inventories",
-  "authors": [
-    "Elephant_1214"
-  ],
-  "contact": {
-    "homepage": "https://github.com/Elephant1214",
-    "sources": "https://github.com/Elephant1214/MouseKeyInventoryFix"
-  },
+    "name": "Mouse Key Inventory Fix",
+    "description": "Fixes the issues with mouse keys in inventories",
+    "authors": [
+        "Elephant_1214"
+    ],
+    "contact": {
+        "homepage": "https://github.com/Elephant1214",
+        "sources": "https://github.com/Elephant1214/MouseKeyInventoryFix"
+    },
 
-  "license": "CC0-1.0",
-  "icon": "assets/mousekeyinventoryfix/icon.png",
+    "license": "DBAD",
+    "icon": "assets/mousekeyinventoryfix/icon.png",
+    "environment": "client",
+    "entrypoints": {
+        "main": [
+            "nathan.mousekeyinventoryfix.MouseKeyInventoryFix"
+        ]
+    },
+    "mixins": [
+        "mousekeyinventoryfix.mixins.json"
+    ],
 
-  "environment": "client",
-  "entrypoints": {
-    "main": [
-      "nathan.mousekeyinventoryfix.MouseKeyInventoryFix"
-    ]
-  },
-  "mixins": [
-    "mousekeyinventoryfix.mixins.json"
-  ],
-
-  "depends": {
-    "fabricloader": ">=0.14.6",
-    "fabric": "*",
-    "minecraft": ">=1.16",
-    "java": ">=8"
-  }
+    "depends": {
+        "fabricloader": ">=0.14.6",
+        "fabric": "*",
+        "minecraft": ">=1.16",
+        "java": ">=8"
+    }
 }

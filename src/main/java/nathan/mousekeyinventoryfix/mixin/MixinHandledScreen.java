@@ -16,22 +16,30 @@ import static net.minecraft.client.gui.screen.Screen.hasControlDown;
 
 @Mixin(HandledScreen.class)
 public abstract class MixinHandledScreen {
-    protected MinecraftClient client = MinecraftClient.getInstance();
-
+    protected MinecraftClient client;
     @Shadow
     @Nullable
     protected Slot focusedSlot;
 
     /**
      * @author Elephant_1214
-     * @reason Fixes the issue with closing an inventory and dropping items when the keys are bound to mouse buttons
+     * @reason Fixes not being able to use mouse key binds to close inventories
      */
-    @Inject(method = "onMouseClick(I)V", at = @At(value = "FIELD", target = "Lnet/minecraft/client/option/GameOptions;swapHandsKey:Lnet/minecraft/client/option/KeyBinding;", opcode = Opcodes.GETFIELD))
-    public void onMouseClickMixin(int button, CallbackInfo ci) {
+    @Inject(method = "onMouseClick(I)V", at = @At(value = "HEAD"))
+    public void mouseCloseInventoryMixin(int button, CallbackInfo ci) {
         if (this.client.options.inventoryKey.matchesMouse(button)) {
             this.close();
             return;
-        } else if (this.client.options.dropKey.matchesMouse(button)) {
+        }
+    }
+
+    /**
+     * @author Elephant_1214
+     * @reason Fixes not being able to use mouse key binds to drop items
+     */
+    @Inject(method = "onMouseClick(I)V", at = @At(value = "FIELD", target = "Lnet/minecraft/client/option/GameOptions;swapHandsKey:Lnet/minecraft/client/option/KeyBinding;", opcode = Opcodes.GETFIELD))
+    public void mouseDropMixin(int button, CallbackInfo ci) {
+        if (this.client.options.dropKey.matchesMouse(button)) {
             this.onMouseClick(this.focusedSlot, this.focusedSlot.id, hasControlDown() ? 1 : 0, SlotActionType.THROW);
             return;
         }
