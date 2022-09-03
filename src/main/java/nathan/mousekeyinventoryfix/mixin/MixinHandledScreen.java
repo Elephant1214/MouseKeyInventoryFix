@@ -16,7 +16,7 @@ import static net.minecraft.client.gui.screen.Screen.hasControlDown;
 
 @Mixin(HandledScreen.class)
 public abstract class MixinHandledScreen {
-    protected MinecraftClient client;
+    protected MinecraftClient client = MinecraftClient.getInstance();
     @Shadow
     @Nullable
     protected Slot focusedSlot;
