@@ -1,0 +1,24 @@
+modLoader="javafml" #mandatory
+loaderVersion="[37, 43,]"
+license="DBAD"
+[[mods]] #mandatory
+modId="mousekeyinventoryfix" #mandatory
+version="1.0.0" #mandatory
+displayName="Mouse Key Inventory Fix" #mandatory
+logoFile="mousekeyinventoryfix_icon.png" #optional
+authors="Elephant_1214" #optional
+description='''
+Fixes the almost ten-year-old issue with not being able to use mouse key binds in inventories.
+'''
+[[dependencies.mousekeyinventoryfix]] #optional
+    modId="forge" #mandatory
+    mandatory=true #mandatory
+    versionRange="[37, 43,]" #mandatory
+    ordering="NONE"
+    side="BOTH"
+[[dependencies.mousekeyinventoryfix]]
+    modId="minecraft"
+    mandatory=true
+    versionRange="[1.17, 1.19.2]"
+    ordering="NONE"
+    side="BOTH"

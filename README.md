@@ -10,4 +10,4 @@ A simple mod that uses mixins to fix an issue that has been in the game for a lo
 Just clone the repo to a local folder and open it in your IDE
 
 ## License
-[DBAD Public License](https://github.com/Elephant1214/MouseKeyInventoryFix/blob/main/LICENSE)
+[Creative Commons Zero v1.0 Universal](https://github.com/Elephant1214/MouseKeyInventoryFix/blob/1.19/LICENSE)

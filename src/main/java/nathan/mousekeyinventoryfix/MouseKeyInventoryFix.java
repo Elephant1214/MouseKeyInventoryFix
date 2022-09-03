@@ -1,8 +1,8 @@
 package nathan.mousekeyinventoryfix;
 
-import net.fabricmc.api.ModInitializer;
+import net.minecraftforge.fml.common.Mod;
 
-public class MouseKeyInventoryFix implements ModInitializer {
-    @Override
-    public void onInitialize() {}
+@Mod("mousekeyinventoryfix")
+public class MouseKeyInventoryFix {
+    public MouseKeyInventoryFix() {}
 }
