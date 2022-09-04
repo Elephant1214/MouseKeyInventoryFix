@@ -19,6 +19,6 @@ Fixes the almost ten-year-old issue with not being able to use mouse key binds i
 [[dependencies.mousekeyinventoryfix]]
     modId="minecraft"
     mandatory=true
-    versionRange="[1.17, 1.19.2]"
+    versionRange="[1.17.1, 1.19.2]"
     ordering="NONE"
     side="BOTH"
