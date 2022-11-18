@@ -1,38 +1,39 @@
 buildscript {
     repositories {
         maven { url = "https://maven.minecraftforge.net" }
+        maven { url = "https://maven.parchmentmc.org" }
         maven { url = "https://repo.spongepowered.org/maven" }
         mavenCentral()
     }
     dependencies {
         classpath group: "net.minecraftforge.gradle", name: "ForgeGradle", version: "5.1.+", changing: true
-        classpath "org.spongepowered:mixingradle:0.7.+"
+        classpath group: "org.parchmentmc", name: "librarian", version: "1.+", changing: true
+        classpath group: "org.spongepowered", name: "mixingradle", version: "0.7.+"
     }
 }
 apply plugin: "net.minecraftforge.gradle"
+apply plugin: "org.parchmentmc.librarian.forgegradle"
 apply plugin: "org.spongepowered.mixin"
 apply plugin: "idea"
 
 String modid = "mousekeyinventoryfix"
-version = "Forge-1.0.0"
+version = "Forge1.16.x-1.0.0"
 group = "nathan.${modid}"
 archivesBaseName = "MouseKeyInventoryFix"
 
-java.toolchain.languageVersion = JavaLanguageVersion.of(16)
+java.toolchain.languageVersion = JavaLanguageVersion.of(8)
 compileJava {
     options.compilerArgs << "-Xlint:deprecation" << "-Xlint:unchecked"
 }
 
 println("Java: " + System.getProperty("java.version") + " JVM: " + System.getProperty("java.vm.version") + "(" + System.getProperty("java.vendor") + ") Arch: " + System.getProperty("os.arch"))
 minecraft {
-    mappings channel: "official", version: "1.17.1"
+    mappings channel: "parchment", version: "2022.03.06-1.16.5"
     // makeObfSourceJar = false
 
     runs {
         client {
             workingDirectory project.file("run")
-            property "forge.logging.markers", "REGISTRIES"
-            property "forge.logging.console.level", "debug"
             arg "-mixin.config=${modid}.mixins.json"
 
             mods {
@@ -44,8 +45,6 @@ minecraft {
 
         server {
             workingDirectory project.file("run")
-            property "forge.logging.markers", "REGISTRIES"
-            property "forge.logging.console.level", "debug"
 
             mods {
                 mousekeyinventoryfix {
@@ -72,8 +71,8 @@ minecraft {
 sourceSets.main.resources { srcDir "src/generated/resources" }
 
 dependencies {
-    minecraft "net.minecraftforge:forge:1.17.1-37.1.1"
-    annotationProcessor "org.spongepowered:mixin:0.8.4:processor"
+    minecraft "net.minecraftforge:forge:1.16.5-36.2.39"
+    annotationProcessor "org.spongepowered:mixin:0.8.5:processor"
 }
 
 mixin {
