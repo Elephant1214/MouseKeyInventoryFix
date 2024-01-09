@@ -1,0 +1,13 @@
+{
+    "required": true,
+    "minVersion": "0.8",
+    "package": "me.elephant1214.mousekeyinventoryfix.mixins",
+    "compatibilityLevel": "JAVA_8",
+    "client": [
+        "MixinAbstractContainerScreen"
+    ],
+    "injectors": {
+        "defaultRequire": 1
+    },
+    "refmap": "mousekeyinventoryfix.refmap.json"
+}

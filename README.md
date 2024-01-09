@@ -6,8 +6,9 @@
 # Mouse Key Inventory Fix
 A simple mod that uses mixins to fix an issue that has been in the game for a long time
 
-## Setup
-Just clone the repo to a local folder and open it in your IDE
+## Building From Source
+Clone the repo to a local folder and open it in your IDE then run `./gradlew build` to build for all versions,
+or `./gradlew subproject:build`, replacing `subproject` with the subproject of the game version and mod loader you want.
 
 ## License
 This mod is in the public domain since it is a bug fix.

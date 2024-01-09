@@ -1,10 +1,10 @@
 {
     "schemaVersion": 1,
     "id": "mousekeyinventoryfix",
-    "version": "1.1.1",
+    "version": "${version}",
 
     "name": "Mouse Key Inventory Fix",
-    "description": "Fixes the almost ten-year-old issue with not being able to use mouse key binds in inventories.",
+    "description": "Fixes the almost ten-year-old issue with mouse key binds not working in inventories.",
     "authors": [
         "Elephant_1214"
     ],
@@ -13,22 +13,15 @@
         "sources": "https://github.com/Elephant1214/MouseKeyInventoryFix"
     },
 
-    "license": "DBAD",
+    "license": "Public Domain",
     "icon": "assets/mousekeyinventoryfix/icon.png",
     "environment": "client",
-    "entrypoints": {
-        "main": [
-            "nathan.mousekeyinventoryfix.MouseKeyInventoryFix"
-        ]
-    },
     "mixins": [
         "mousekeyinventoryfix.mixins.json"
     ],
 
     "depends": {
         "fabricloader": ">=0.14.6",
-        "fabric": "*",
-        "minecraft": ">=1.16",
-        "java": ">=8"
+        "minecraft": ">=1.16"
     }
 }
